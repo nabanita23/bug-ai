@@ -14,7 +14,7 @@ export const getChromeExtensionPath = async (browser: WebdriverIO.Browser) => {
    * So I used the following code to access the shadow root manually.
    *
    *  @url https://github.com/webdriverio/webdriverio/issues/13521
-   *  @url https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/issues/786
+   *  @url https://github.com/nabanita23/bug-ai.git/issues/786
    */
   const extensionItem = await (async () => {
     const extensionsManager = await $('extensions-manager').getElement();

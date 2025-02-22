@@ -20,8 +20,8 @@ describe('Webextension Content Runtime Script', () => {
 
     await contentScriptButton.click();
 
-    // Check if id chrome-extension-boilerplate-react-vite-runtime-content-view-root exists on page
-    const runtimeElement = await $('#chrome-extension-boilerplate-react-vite-runtime-content-view-root').getElement();
+    // Check if id bug-ai-react-vite-runtime-content-view-root exists on page
+    const runtimeElement = await $('#bug-ai-react-vite-runtime-content-view-root').getElement();
 
     await expect(runtimeElement).toBeExisting();
   });

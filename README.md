@@ -10,14 +10,14 @@
 ![](https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![](https://badges.aleen42.com/src/vitejs.svg)
 
-![GitHub action badge](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/actions/workflows/build-zip.yml/badge.svg)
-![GitHub action badge](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/actions/workflows/lint.yml/badge.svg)
+![GitHub action badge](https://github.com/nabanita23/bug-ai.git/actions/workflows/build-zip.yml/badge.svg)
+![GitHub action badge](https://github.com/nabanita23/bug-ai.git/actions/workflows/lint.yml/badge.svg)
 
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Jonghakseo/chrome-extension-boilerplate-react-viteFactions&count_bg=%23#222222&title_bg=%23#454545&title=😀&edge_flat=true" alt="hits"/>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/nabanita23/bug-ai.gitFactions&count_bg=%23#222222&title_bg=%23#454545&title=😀&edge_flat=true" alt="hits"/>
 <a href="https://discord.gg/4ERQ6jgV9a" target="_blank"><img src="https://discord.com/api/guilds/1263404974830915637/widget.png"/></a>
 
 > This boilerplate
-> has [Legacy version](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/tree/legacy)
+> has [Legacy version](https://github.com/nabanita23/bug-ai.git/tree/legacy)
 
 </div>
 
@@ -78,7 +78,7 @@ the build speed and development experience by using Vite and Turborepo.
 
    **This will set the EOL (End of line) character to be the same as on Linux/macOS. Without this, our bash script won't
    work, and you will have conflicts with developers on Linux/macOS.**
-2. Clone this repository.( ```git clone https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite``` )
+2. Clone this repository.( ```git clone https://github.com/nabanita23/bug-ai.git``` )
 3. Ensure your node version is >= than in `.nvmrc` file, recommend to
    use [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#intro)
 4. Edit `/packages/i18n/locales/`{your locale(s)}/`messages.json`
@@ -93,7 +93,7 @@ Then, depending on the target browser:
 
 1. Run:
     - Dev: `pnpm dev` (on Windows, you should run as administrator;
-      see [issue#456](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/issues/456))
+      see [issue#456](https://github.com/nabanita23/bug-ai.git/issues/456))
     - Prod: `pnpm build`
 2. Open in browser - `chrome://extensions`
 3. Check - <kbd>Developer mode</kbd>
@@ -216,9 +216,9 @@ Other useful packages:
 If saving source files doesn't cause the extension HMR code to trigger a reload of the browser page, try this:
 
 1. Ctrl+C the development server and restart it (`pnpm run dev`)
-2. If you get a [`grpc` error](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/issues/612),
+2. If you get a [`grpc` error](https://github.com/nabanita23/bug-ai.git/issues/612),
    [kill the
-   `turbo` process](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/issues/612#issuecomment-2518982339)
+   `turbo` process](https://github.com/nabanita23/bug-ai.git/issues/612#issuecomment-2518982339)
    and run `pnpm dev` again.
 
 ## Community
@@ -250,7 +250,7 @@ Also, suggest new features or share any challenges you've faced while developing
 
 This Boilerplate is made possible thanks to all of its contributors.
 
-<a href="https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/graphs/contributors">
+<a href="https://github.com/nabanita23/bug-ai.git/graphs/contributors">
   <img width="500px" src="https://contrib.rocks/image?repo=Jonghakseo/chrome-extension-boilerplate-react-vite" alt="All Contributors"/>
 </a>
 

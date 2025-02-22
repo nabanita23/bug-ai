@@ -1,10 +1,10 @@
-import { createRoot } from 'react-dom/client';
 import App from '@src/App';
 import injectedStyle from '@src/index.css?inline';
+import { createRoot } from 'react-dom/client';
 
 export function mount() {
   const root = document.createElement('div');
-  root.id = 'chrome-extension-boilerplate-react-vite-runtime-content-view-root';
+  root.id = 'bug-ai-react-vite-runtime-content-view-root';
 
   document.body.append(root);
 

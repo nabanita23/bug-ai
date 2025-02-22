@@ -1,16 +1,15 @@
-import '@src/NewTab.css';
-import '@src/NewTab.scss';
+import { t } from '@extension/i18n';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { exampleThemeStorage } from '@extension/storage';
 import { ToggleButton } from '@extension/ui';
-import { t } from '@extension/i18n';
+import '@src/NewTab.css';
+import '@src/NewTab.scss';
 
 const NewTab = () => {
   const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
   const logo = isLight ? 'new-tab/logo_horizontal.svg' : 'new-tab/logo_horizontal_dark.svg';
-  const goGithubSite = () =>
-    chrome.tabs.create({ url: 'https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite' });
+  const goGithubSite = () => chrome.tabs.create({ url: 'https://github.com/nabanita23/bug-ai.git' });
 
   console.log(t('hello', 'World'));
   return (
