@@ -1,7 +1,5 @@
-import { t } from '@extension/i18n';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { exampleThemeStorage } from '@extension/storage';
-import { ToggleButton } from '@extension/ui';
 import '@src/Popup.css';
 import { useEffect, useState } from 'react';
 
@@ -21,6 +19,8 @@ const notificationOptions = {
 const Popup = () => {
   const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
+  const logo = isLight ? 'popup/logo_vertical.svg' : 'popup/logo_vertical_dark.svg';
+  const aiCaptureButton = 'popup/ai-capture-button.png';
   const [screenshot, setScreenshot] = useState<string | null>(null);
 
   const injectContentScript = async () => {
@@ -78,35 +78,51 @@ const Popup = () => {
   }, []);
 
   return (
-    <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
+    <div className={`p-4 ${isLight ? 'bg-slate-50' : 'bg-gray-950'}`}>
       <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
-        <button
-          className={`font-bold mt-4 py-1 px-4 rounded shadow hover:scale-105 ${
-            isLight ? 'bg-blue-200 text-black' : 'bg-gray-700 text-white'
-          }`}
-          onClick={injectContentScript}>
-          Inject Content Script
-        </button>
-
-        <button
-          className="mt-4 bg-green-500 text-white px-4 py-2 rounded shadow hover:scale-105"
-          onClick={startScreenshotSelection}>
-          Capture Screenshot
-        </button>
-
-        {screenshot && (
-          <div className="popup-modal">
-            <img src={screenshot} alt="Captured Screenshot" className="screenshot-preview" />
-            <button
-              className="mt-4 bg-green-500 text-white px-4 py-2 rounded shadow hover:scale-105"
-              onClick={() => setScreenshot(null)}>
-              Close
-            </button>
+        <div className="flex space-x-2 items-center">
+          <img src={chrome.runtime.getURL(logo)} className="bug-ai-logo" alt="bug-ai-logo" />
+          <div>
+            <h1 className="font-extrabold text-lg">BugAI</h1>
+            <small className="text-xs">AI bug tracker</small>
           </div>
-        )}
-
-        <ToggleButton>{t('toggleTheme')}</ToggleButton>
+        </div>
       </header>
+
+      <div className="flex my-4 border border-dashed rounded-xl items-center justify-center h-56">
+        <div className="relative flex items-center justify-center h-full w-full p-2">
+          {screenshot ? (
+            <div>
+              <img src={screenshot} alt="Captured Screenshot" className="screenshot-preview" />
+              <button
+                className="absolute right-0 top-0 px-2 py-1 m-1 rounded-lg border border-dashed hover:scale-105"
+                onClick={() => setScreenshot(null)}>
+                Reset
+              </button>
+            </div>
+          ) : (
+            <button className="text-center" onClick={startScreenshotSelection}>
+              <img src={chrome.runtime.getURL(aiCaptureButton)} className="h-28" alt="ai-capture-btn" />
+              <p className="text-gray-600 text-xs">Capture Screen</p>
+            </button>
+          )}
+        </div>
+      </div>
+
+      <span className="flex rounded-full">
+        <button
+          disabled={!screenshot}
+          type="button"
+          className="flex-1 items-center rounded-l-full px-3 py-2 text-sm font-semibold text-gray-900 border hover:bg-gray-50 focus:z-10">
+          Run AI/LLM
+        </button>
+        <button
+          disabled={!screenshot}
+          type="button"
+          className="flex-1 -ml-px items-center rounded-r-full px-3 py-2 text-sm font-semibold text-gray-900 border hover:bg-gray-50 focus:z-10">
+          Create JIRA
+        </button>
+      </span>
     </div>
   );
 };
